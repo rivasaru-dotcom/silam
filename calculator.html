@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator | SILAM Finance</title>
+    <link rel="icon" type="jpeg" href="Images/logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top custom-nav">
+    <div class="container">
+        <a class="navbar-brand" href="home.html" aria-label="SILAM Finance home">
+    <img src="Images/title.png" alt="SILAM Finance" class="navbar-logo">
+</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="home.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="home.html#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="home.html#process">How it works</a></li>
+                <li class="nav-item"><a class="nav-link" href="home.html#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="calculator.html">Loan Calculator</a></li>
+                <li class="nav-item ms-lg-3"><a href="appointment.html" class="custom-btn nav-cta">Book an Appointment</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="calculator-hero">
+    <div class="hero-circle hero-circle-one"></div>
+    <div class="hero-circle hero-circle-two"></div>
+
+    <div class="container position-relative">
+        <div class="hero-content">
+            <p class="eyebrow"><span></span> LOAN CALCULATOR</p>
+            <h1>Know your numbers <span>before you move.</span></h1>
+            <p class="hero-description">
+                Estimate your home loan repayments, see how extra repayments can affect your loan,
+                and explore your amortisation schedule.
+            </p>
+            <div class="hero-note">
+                <i class="bi bi-info-circle"></i>
+                Estimates only. Your actual rate, repayments and borrowing capacity depend on your circumstances and lender assessment.
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+<section class="calculator-section">
+  <div class="container">
+    <div class="calculator-intro">
+      <p class="section-label">AUSTRALIAN PROPERTY CALCULATORS</p>
+      <h2>Everything you need <span>before you buy.</span></h2>
+      <p>Choose a calculator below. Results are estimates only and should be confirmed with the relevant government office, lender or tax professional.</p>
+    </div>
+    <div class="calculator-category-switcher" role="tablist" aria-label="Calculator category">
+<button class="calculator-category active" type="button" data-category="home-loans">
+    <i class="bi bi-house"></i>
+    <span>Home Loans</span>
+</button>
+<button class="calculator-category" type="button" data-category="buying-costs">
+    <i class="bi bi-receipt"></i>
+    <span>Buying Costs</span>
+</button>
+<button class="calculator-category" type="button" data-category="planning">
+    <i class="bi bi-bar-chart"></i>
+    <span>Planning</span>
+</button>
+</div>
+<div class="calculator-sub-switcher">
+<div class="calculator-group active" data-group="home-loans">
+    <button class="calc-tab active" type="button" data-calculator="repayment">
+        <i class="bi bi-house-check"></i>
+        <span>P&amp;I</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="interest-only">
+        <i class="bi bi-percent"></i>
+        <span>Interest Only</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="extra">
+        <i class="bi bi-lightning-charge"></i>
+        <span>Extra Repayment</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="io-vs-pi">
+        <i class="bi bi-columns-gap"></i>
+        <span>IO vs P&amp;I</span>
+    </button>
+
+</div>
+
+<div class="calculator-group" data-group="buying-costs">
+    <button class="calc-tab" type="button" data-calculator="borrowing">
+        <i class="bi bi-wallet2"></i>
+        <span>Borrowing Power</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="stamp">
+        <i class="bi bi-receipt"></i>
+        <span>Stamp Duty</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="land-tax">
+        <i class="bi bi-tree"></i>
+        <span>Land Tax</span>
+    </button>
+</div>
+<div class="calculator-group" data-group="planning">
+    <button class="calc-tab" type="button" data-calculator="tax">
+        <i class="bi bi-calculator"></i>
+        <span>Tax Deduction</span>
+    </button>
+    <button class="calc-tab" type="button" data-calculator="schedule">
+        <i class="bi bi-table"></i>
+        <span>Amortisation</span>
+    </button>
+</div>
+</div>
+<div class="calculator-disclaimer calculator-disclaimer-important">
+    <div class="calculator-disclaimer-icon">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+    </div>
+
+    <div class="calculator-disclaimer-content">
+        <strong>Estimates only — rates and rules can change</strong>
+
+        <p>
+            This calculator provides estimates for general information purposes only.
+            Interest rates, government charges, stamp duty, land tax thresholds,
+            concessions, tax rates and eligibility requirements can change.
+            Results may also vary depending on your individual circumstances and
+            the rules that apply on the relevant contract, settlement or assessment date.
+        </p>
+
+        <p>
+            Always confirm the result with the relevant government authority,
+            lender, accountant, conveyancer or other qualified professional
+            before making a financial decision.
+        </p>
+    </div>
+</div>
+
+    <div class="calculator-workspace">
+
+      <!-- P&I -->
+      <div class="calc-panel active" id="panel-repayment">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading">
+              <p class="section-label">P&amp;I REPAYMENTS</p>
+              <h2>Know your <span>monthly cost.</span></h2>
+              <p>Estimate principal and interest repayments, total interest and LVR.</p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field full"><label>Loan amount</label><input id="piLoan" type="number" min="0" step="1000" value="560000"></div>
+              <div class="form-field"><label>Interest rate (% p.a.)</label><input id="piRate" type="number" min="0" max="30" step="0.01" value="6.29"></div>
+              <div class="form-field"><label>Loan term (years)</label><input id="piTerm" type="number" min="1" max="50" step="1" value="30"></div>
+              <div class="form-field">
+    <label>Property value</label>
+    <input id="piPropertyValue" type="number" min="0" step="5000" value="700000">
+</div>
+
+<div class="form-field">
+    <label>Extra monthly repayment</label>
+    <input id="piExtra" type="number" min="0" step="50" value="0">
+</div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="pi">Calculate repayments</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">P&amp;I SUMMARY</p><h2>Estimated repayment</h2><div class="main-result"><span id="piMonthly">$0</span><small>/ month</small></div></div>
+            <div class="result-grid">
+              <div class="result-box"><i class="bi bi-percent"></i><span>Total interest</span><strong id="piInterest">$0</strong></div>
+              <div class="result-box"><i class="bi bi-calendar3"></i><span>Total repayments</span><strong id="piTotal">$0</strong></div>
+              <div class="result-box"><i class="bi bi-lightning-charge"></i><span>Interest saved</span><strong id="piSaved">$0</strong></div>
+              <div class="result-box"><i class="bi bi-clock"></i><span>Term saved</span><strong id="piTimeSaved">0 months</strong></div>
+            </div>
+            <div class="breakdown"><div class="breakdown-header"><span>Principal vs interest</span><strong id="piInterestPct">0% interest</strong></div><div class="breakdown-bar"><div id="piPrincipalBar"></div><div id="piInterestBar"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Borrowing power -->
+      <div class="calc-panel" id="panel-borrowing">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">BORROWING POWER</p><h2>Find a realistic <span>borrowing ceiling.</span></h2><p>This simplified servicing model uses an assessment-rate buffer and common expense assumptions.</p></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Your gross annual income</label><input id="bpIncome" type="number" min="0" step="1000" value="100000"></div>
+              <div class="form-field"><label>Partner gross annual income</label><input id="bpPartner" type="number" min="0" step="1000" value="0"></div>
+              <div class="form-field"><label>Dependants</label><select id="bpDependants"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+              <div class="form-field"><label>Monthly living expenses</label><input id="bpLiving" type="number" min="0" step="100" value="3000"></div>
+              <div class="form-field"><label>Other monthly debts</label><input id="bpDebts" type="number" min="0" step="100" value="0"></div>
+              <div class="form-field"><label>Credit card limits</label><input id="bpCards" type="number" min="0" step="1000" value="0"></div>
+              <div class="form-field"><label>Assessment rate (% p.a.)</label><input id="bpRate" type="number" min="0" step="0.01" value="8.79"></div>
+              <div class="form-field"><label>Loan term (years)</label><input id="bpTerm" type="number" min="1" max="50" value="30"></div>
+              <div class="form-field full"><label>Loan type</label><select id="bpType"><option value="pi">Principal &amp; Interest</option><option value="io">Interest Only</option></select></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="borrowing">Calculate borrowing power</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">BORROWING POWER SUMMARY</p><h2>Estimated servicing ceiling</h2><div class="main-result"><span id="bpResult">$0</span></div></div>
+            <div class="result-grid"><div class="result-box"><span>Gross household income</span><strong id="bpGross">$0</strong></div><div class="result-box"><span>Net monthly income (estimate)</span><strong id="bpNet">$0</strong></div><div class="result-box"><span>Assessment repayment</span><strong id="bpPayment">$0</strong></div><div class="result-box"><span>Monthly buffer</span><strong id="bpBuffer">$0</strong></div></div>
+            <p class="small-print">Indicative only. Actual lender servicing differs by HEM, tax treatment, rental income shading, dependants, debts and policy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stamp duty -->
+      <div class="calc-panel" id="panel-stamp">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">STAMP DUTY</p><h2>Estimate transfer duty <span>for your state.</span></h2><p>Includes a simplified state-by-state duty model and common first-home concessions.</p></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Property value</label><input id="sdValue" type="number" min="0" step="5000" value="700000"></div>
+              <div class="form-field"><label>State / territory</label><select id="sdState"><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="SA">SA</option><option value="WA">WA</option><option value="TAS">TAS</option><option value="ACT">ACT</option><option value="NT">NT</option></select></div>
+              <div class="form-field"><label>Buyer type</label><select id="sdBuyer"><option value="owner">Owner occupier</option><option value="investor">Investor</option></select></div>
+              <div class="form-field"><label>First home buyer?</label><select id="sdFhb"><option value="yes">Yes</option><option value="no">No</option></select></div>
+              <div class="form-field"><label>Property type</label><select id="sdProperty"><option value="established">Established home</option><option value="new">New home</option><option value="vacant">Vacant land</option></select></div>
+              <div class="form-field"><label>Foreign / non-resident buyer?</label><select id="sdForeign"><option value="no">No</option><option value="yes">Yes</option></select></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="stamp">Calculate stamp duty</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">STAMP DUTY SUMMARY</p><h2>Estimated transfer duty</h2><div class="main-result"><span id="sdDuty">$0</span></div></div>
+            <div class="result-grid"><div class="result-box"><span>Base duty</span><strong id="sdBase">$0</strong></div><div class="result-box"><span>Foreign surcharge</span><strong id="sdSurcharge">$0</strong></div><div class="result-box"><span>First-home concession</span><strong id="sdConcession">$0</strong></div><div class="result-box"><span>Estimated cash needed</span><strong id="sdCash">$0</strong></div></div>
+            <p class="small-print">Approximate illustration. State rules, thresholds, dates and eligibility tests change. Confirm with the relevant state revenue office and conveyancer.</p>
+            <div class="result-box">
+    <i class="bi bi-house"></i>
+    <span>Estimated LVR</span>
+    <strong id="piLvr">—</strong>
+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra repayment -->
+
+<div class="calc-panel" id="panel-extra">
+
+    <div class="panel-header">
+        <div>
+            <h2>Extra Repayment Calculator</h2>
+            <p>
+                See how additional monthly repayments and a one-off
+                lump sum could reduce your loan term and interest.
+            </p>
+        </div>
+    </div>
+    <div class="form-grid">
+
+        <div class="form-field">
+            <label for="erLoan">Loan amount</label>
+            <input
+                id="erLoan"
+                type="number"
+                min="0"
+                step="1000"
+                value="600000"
+                inputmode="decimal"
+            >
+        </div>
+        <div class="form-field">
+            <label for="erRate">Interest rate</label>
+            <div class="input-with-suffix">
+                <input
+                    id="erRate"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value="6.00"
+                    inputmode="decimal"
+                >
+                <span>%</span>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="erTerm">Loan term</label>
+            <div class="input-with-suffix">
+                <input
+                    id="erTerm"
+                    type="number"
+                    min="1"
+                    max="50"
+                    step="1"
+                    value="30"
+                    inputmode="numeric"
+                >
+                <span>years</span>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="erExtra">
+                Extra monthly repayment
+            </label>
+            <div class="input-with-prefix">
+                <span>$</span>
+                <input
+                    id="erExtra"
+                    type="number"
+                    min="0"
+                    step="50"
+                    value="300"
+                    inputmode="decimal"
+                >
+            </div>
+            <small>
+                Additional amount paid each month.
+            </small>
+        </div>
+        <div class="form-field">
+            <label for="erLump">
+                One-off lump sum
+            </label>
+            <div class="input-with-prefix">
+                <span>$</span>
+                <input
+                    id="erLump"
+                    type="number"
+                    min="0"
+                    step="1000"
+                    value="0"
+                    inputmode="decimal"
+                >
+            </div>
+            <small>
+                Optional one-off payment.
+            </small>
+        </div>
+        <div class="form-field">
+            <label for="erExtraStart">
+                Start monthly extra after
+            </label>
+            <div class="input-with-suffix">
+                <input
+                    id="erExtraStart"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value="0"
+                    inputmode="numeric"
+                >
+                <span>months</span>
+            </div>
+            <small>
+                0 means the extra repayment starts immediately.
+            </small>
+        </div>
+        <div class="form-field">
+            <label for="erLumpMonth">
+                Lump sum paid after
+            </label>
+            <div class="input-with-suffix">
+                <input
+                    id="erLumpMonth"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value="0"
+                    inputmode="numeric"
+                >
+                <span>months</span>
+            </div>
+            <small>
+                0 means no lump sum is applied.
+            </small>
+        </div>
+    </div>
+    <button
+        type="button"
+        class="calc-action"
+        data-action="extra"
+    >
+        <i class="bi bi-calculator"></i>
+        Calculate extra repayments
+    </button>
+    <div class="results-section">
+
+        <div class="results-header">
+            <h3>Estimated savings</h3>
+            <p>
+                Comparison between the original loan and your
+                extra repayment strategy.
+            </p>
+        </div>
+        <div class="result-grid">
+            <div class="result-box result-box-highlight">
+                <i class="bi bi-piggy-bank"></i>
+                <span>Interest saved</span>
+                <strong id="erSaved">$0</strong>
+            </div>
+            <div class="result-box result-box-highlight">
+                <i class="bi bi-clock-history"></i>
+                <span>Time saved</span>
+                <strong id="erTime">0 months</strong>
+            </div>
+            <div class="result-box">
+                <i class="bi bi-percent"></i>
+                <span>Original total interest</span>
+                <strong id="erNormalInterest">$0</strong>
+            </div>
+            <div class="result-box">
+                <i class="bi bi-graph-down"></i>
+                <span>New total interest</span>
+                <strong id="erNewInterest">$0</strong>
+            </div>
+            <div class="result-box">
+                <i class="bi bi-calendar-check"></i>
+                <span>New loan term</span>
+                <strong id="erNewTerm">0 months</strong>
+            </div>
+        </div>
+        <div class="result-summary">
+            <div class="result-summary-icon">
+                <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <div>
+                <strong>
+                    Your extra repayments could reduce your loan term
+                    and total interest.
+                </strong>
+                <p>
+                    This is an estimate based on the interest rate,
+                    loan term and repayment assumptions entered above.
+                    Actual results will vary if your interest rate,
+                    repayments or loan conditions change.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator-inline-warning">
+        <i class="bi bi-info-circle"></i>
+        <div>
+            <strong>Estimate only</strong>
+            <p>
+                This calculation assumes the interest rate and repayment
+                conditions remain unchanged for the duration of the loan.
+                Actual loan outcomes may differ.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+      <!-- Interest only -->
+      <div class="calc-panel" id="panel-interest-only">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">INTEREST ONLY</p><h2>See the IO period <span>and P&amp;I jump.</span></h2></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Loan amount</label><input id="ioLoan" type="number" value="560000"></div>
+              <div class="form-field"><label>Interest rate (% p.a.)</label><input id="ioRate" type="number" step="0.01" value="6.49"></div>
+              <div class="form-field"><label>Total loan term (years)</label><input id="ioTerm" type="number" value="30"></div>
+              <div class="form-field"><label>Interest-only period (years)</label><input id="ioPeriod" type="number" min="1" value="5"></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="io">Calculate interest only</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">IO LOAN SUMMARY</p><h2>Cashflow during IO</h2><div class="main-result"><span id="ioPayment">$0</span><small>/ month interest-only</small></div></div>
+            <div class="result-grid"><div class="result-box"><span>P&amp;I payment after IO</span><strong id="ioPi">$0</strong></div><div class="result-box"><span>IO interest paid</span><strong id="ioInterest">$0</strong></div><div class="result-box"><span>Balance after IO</span><strong id="ioBalance">$0</strong></div><div class="result-box"><span>Remaining P&amp;I term</span><strong id="ioRemaining">0 years</strong></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IO vs P&I -->
+      <div class="calc-panel" id="panel-io-vs-pi">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">IO VS P&amp;I</p><h2>Compare the <span>full cost.</span></h2></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Loan amount</label><input id="cmpLoan" type="number" value="560000"></div>
+              <div class="form-field"><label>P&amp;I rate (%)</label><input id="cmpPiRate" type="number" step="0.01" value="6.29"></div>
+              <div class="form-field"><label>IO rate (%)</label><input id="cmpIoRate" type="number" step="0.01" value="6.49"></div>
+              <div class="form-field"><label>Loan term (years)</label><input id="cmpTerm" type="number" value="30"></div>
+              <div class="form-field"><label>IO period (years)</label><input id="cmpPeriod" type="number" value="5"></div>
+              <div class="form-field"><label>Marginal tax rate</label><select id="cmpTax"><option value="0">0%</option><option value="30">30%</option><option value="37" selected>37%</option><option value="45">45%</option></select></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="compare">Compare now</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">IO VS P&amp;I COMPARISON</p><h2>Side-by-side cost</h2></div>
+            <div class="comparison-grid">
+              <div class="comparison-card"><h3>P&amp;I</h3><strong id="cmpPiPayment">$0</strong><span>monthly repayment</span><strong id="cmpPiInterest">$0</strong><span>total interest</span></div>
+              <div class="comparison-card"><h3>IO → P&amp;I</h3><strong id="cmpIoPayment">$0</strong><span>IO monthly payment</span><strong id="cmpIoInterest">$0</strong><span>total interest</span></div>
+            </div>
+            <div class="result-box result-box-wide"><span>Estimated after-tax interest difference</span><strong id="cmpAfterTax">$0</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tax deductions -->
+      <div class="calc-panel" id="panel-tax">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">INVESTMENT TAX DEDUCTIONS</p><h2>Estimate your <span>property tax impact.</span></h2><p>Illustrative calculation using a simplified resident marginal-rate model.</p></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Loan amount</label><input id="taxLoan" type="number" value="560000"></div>
+              <div class="form-field"><label>Interest rate (%)</label><input id="taxRate" type="number" step="0.01" value="6.29"></div>
+              <div class="form-field"><label>Loan term (years)</label><input id="taxTerm" type="number" value="30"></div>
+              <div class="form-field"><label>Taxable income</label><input id="taxIncome" type="number" value="120000"></div>
+              <div class="form-field"><label>Annual rental income</label><input id="taxRent" type="number" value="36000"></div>
+              <div class="form-field"><label>Other annual expenses</label><input id="taxExpenses" type="number" value="12000"></div>
+              <div class="form-field"><label>Depreciation claim</label><input id="taxDep" type="number" value="8000"></div>
+              <div class="form-field"><label>Marginal tax rate</label><select id="taxRateSelect"><option value="0">0%</option><option value="16">16%</option><option value="30">30%</option><option value="37" selected>37%</option><option value="45">45%</option></select></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="tax">Calculate tax deductions</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">TAX DEDUCTION SUMMARY</p><h2>Annual property <span>tax effect.</span></h2><div class="main-result"><span id="taxDeduction">$0</span><small>deductible costs</small></div></div>
+            <div class="result-grid"><div class="result-box"><span>Annual loan interest</span><strong id="taxInterest">$0</strong></div><div class="result-box"><span>Net rental position</span><strong id="taxNet">$0</strong></div><div class="result-box"><span>Estimated tax saving</span><strong id="taxSaving">$0</strong></div><div class="result-box"><span>Cashflow after tax</span><strong id="taxCashflow">$0</strong></div></div>
+            <p class="small-print">Tax rules are complex and this does not account for Medicare levy, offsets, ownership structures, capital gains or individual circumstances.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Land tax -->
+      <div class="calc-panel" id="panel-land-tax">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">LAND TAX</p><h2>Estimate annual <span>land tax.</span></h2><p>Use the site/unimproved land value from the relevant valuation or rates notice, not the purchase price.</p></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Land / site value</label><input id="ltValue" type="number" value="900000"></div>
+              <div class="form-field"><label>State / territory</label><select id="ltState"><option>NSW</option><option>VIC</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>ACT</option><option>NT</option></select></div>
+              <div class="form-field full"><label>Ownership type</label><select id="ltOwner"><option value="individual">Individual / company-style general holding</option><option value="trust">Trust</option><option value="foreign">Foreign / absentee owner</option><option value="home">Principal place of residence</option></select></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="land-tax">Calculate land tax</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">LAND TAX RESULT</p><h2>Estimated annual land tax</h2><div class="main-result"><span id="ltResult">$0</span><small>/ year</small></div></div>
+            <div class="result-grid"><div class="result-box"><span>State</span><strong id="ltStateOut">NSW</strong></div><div class="result-box"><span>Threshold used</span><strong id="ltThreshold">$0</strong></div><div class="result-box"><span>Taxable land value</span><strong id="ltTaxable">$0</strong></div><div class="result-box"><span>Top rate used</span><strong id="ltRate">0%</strong></div></div>
+            <p class="small-print">Simplified estimate. State thresholds, aggregation, trust rules, foreign surcharges and principal-place-of-residence exemptions can materially change the result.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amortisation -->
+      <div class="calc-panel" id="panel-schedule">
+        <div class="calculator-card">
+          <div class="calculator-inputs">
+            <div class="calculator-heading"><p class="section-label">FULL AMORTISATION</p><h2>Generate your <span>loan schedule.</span></h2></div>
+            <div class="form-grid">
+              <div class="form-field"><label>Loan amount</label><input id="amLoan" type="number" value="560000"></div>
+              <div class="form-field"><label>Interest rate (%)</label><input id="amRate" type="number" step="0.01" value="6.29"></div>
+              <div class="form-field"><label>Loan term (years)</label><input id="amTerm" type="number" value="30"></div>
+              <div class="form-field"><label>Loan type</label><select id="amType"><option value="pi">Principal &amp; Interest</option><option value="io">Interest Only</option></select></div>
+              <div class="form-field"><label>IO period (years)</label><input id="amIO" type="number" min="0" value="5"></div>
+              <div class="form-field"><label>Extra monthly repayment</label><input id="amExtra" type="number" min="0" value="0"></div>
+            </div>
+            <button class="custom-btn custom-btn-lg calc-action" data-action="schedule">Generate schedule</button>
+          </div>
+          <div class="calculator-results">
+            <div class="result-top"><p class="section-label">AMORTISATION SCHEDULE</p><h2>Month-by-month <span>breakdown.</span></h2><div class="main-result"><span id="amPayment">$0</span><small>/ month</small></div></div>
+            <div class="result-grid"><div class="result-box"><span>Total interest</span><strong id="amInterest">$0</strong></div><div class="result-box"><span>Total paid</span><strong id="amTotal">$0</strong></div><div class="result-box"><span>Months</span><strong id="amMonths">0</strong></div><div class="result-box"><span>Starting balance</span><strong id="amStart">$0</strong></div></div>
+          </div>
+        </div>
+        <section class="schedule-section">
+          <div class="schedule-header"><div><p class="section-label">SCHEDULE</p><h2>Running balance and <span>interest.</span></h2></div><button type="button" class="outline-btn" id="toggleSchedule">Show schedule</button></div>
+          <div class="table-wrapper" id="scheduleTableWrapper">
+            <table class="amortisation-table"><thead><tr><th>Month</th><th>Type</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th><th>Cum. Interest</th></tr></thead><tbody id="amortisationBody"></tbody></table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="understanding-section">
+    <div class="container">
+        <div class="row align-items-end g-5">
+            <div class="col-lg-7">
+                <p class="section-label">UNDERSTAND YOUR RESULT</p>
+                <h2>A number is useful. <span>A strategy is better.</span></h2>
+            </div>
+            <div class="col-lg-5">
+                <p class="understanding-intro">
+                    Your repayment estimate is only one part of the picture. A broker can help you consider rates,
+                    loan structure, fees, deposit, lender policies and your broader financial goals.
+                </p>
+            </div>
+        </div>
+
+        <div class="explanation-grid">
+            <article class="explanation-card">
+                <div class="explanation-number">01</div>
+                <i class="bi bi-percent"></i>
+                <h3>Interest rate</h3>
+                <p>A small change in your interest rate can make a meaningful difference to repayments over the life of a loan.</p>
+            </article>
+
+            <article class="explanation-card">
+                <div class="explanation-number">02</div>
+                <i class="bi bi-bar-chart"></i>
+                <h3>LVR</h3>
+                <p>LVR compares the amount you borrow with the value of the property and can affect available lending options.</p>
+            </article>
+
+            <article class="explanation-card">
+                <div class="explanation-number">03</div>
+                <i class="bi bi-clock-history"></i>
+                <h3>Loan term</h3>
+                <p>A longer loan term can reduce each repayment but may increase the total interest paid over time.</p>
+            </article>
+
+            <article class="explanation-card">
+                <div class="explanation-number">04</div>
+                <i class="bi bi-lightning-charge"></i>
+                <h3>Extra repayments</h3>
+                <p>Paying extra can reduce the balance faster and potentially reduce the interest paid over the life of the loan.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="calculator-cta">
+    <div class="container">
+        <div class="cta-box">
+            <div>
+                <p class="section-label">WANT A MORE PERSONAL ANSWER?</p>
+                <h2>Let's turn your estimate <span>into a plan.</span></h2>
+                <p>Your calculator result is a starting point. We'll help you understand what may be possible based on your individual circumstances.</p>
+            </div>
+            <a href="appointment.html" class="custom-btn custom-btn-lg">
+                Book an Appointment <i class="bi bi-arrow-up-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="calculator-faq">
+    <div class="container">
+        <div class="faq-heading">
+            <p class="section-label">CALCULATOR FAQ</p>
+            <h2>Before you rely on <span>the numbers.</span></h2>
+        </div>
+
+        <div class="accordion" id="calculatorFaq">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                        Is the calculator result accurate?
+                    </button>
+                </h3>
+                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#calculatorFaq">
+                    <div class="accordion-body">
+                        The calculator provides an estimate based on the information you enter. Actual repayments may differ because of the lender, interest rate, loan features, fees and individual circumstances.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                        What is LVR?
+                    </button>
+                </h3>
+                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#calculatorFaq">
+                    <div class="accordion-body">
+                        LVR stands for Loan-to-Value Ratio. It is the amount you borrow expressed as a percentage of the property's value.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                        Does this include stamp duty and other costs?
+                    </button>
+                </h3>
+                <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#calculatorFaq">
+                    <div class="accordion-body">
+                        Yes. Use the Stamp Duty and Land Tax calculators above for separate estimates of government charges. Other purchase costs such as conveyancing, inspections, registration and lender fees are not included.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                        Can I use this to find out how much I can borrow?
+                    </button>
+                </h3>
+                <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#calculatorFaq">
+                    <div class="accordion-body">
+                        Not by itself. Borrowing capacity depends on income, existing commitments, living expenses, dependants, assets, liabilities and lender assessment criteria.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a class="footer-logo" href="home.html">
+                    <img src="Images/logo.jpeg" alt="SILAM Finance Logo" class="footer-logo-img"></a>
+                <p>Home loans made clearer. We help Australians compare lending options and move forward with confidence.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Tiktok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column"><h4>Services</h4><ul>
+                <li><a href="appointment.html">Home loans</a></li><li><a href="appointment.html">First home buyers</a></li><li><a href="appointment.html">Refinancing</a></li>
+                <li><a href="appointment.html">Investment loans</a></li><li><a href="appointment.html">Construction loans</a></li><li><a href="appointment.html">Commercial finance</a></li>
+            </ul></div>
+
+            <div class="footer-column"><h4>Helpful links</h4><ul>
+                <li><a href="#about">About us</a></li><li><a href="#process">How it works</a></li><li><a href="#faq">FAQs</a></li><li><a href="#contact">Contact</a></li>
+                <li><a href="#services">Loan calculators</a></li><li><a href="#about">First home buyer guide</a></li>
+            </ul></div>
+
+            <div class="footer-column footer-contact">
+                <h4>Get in touch</h4>
+                <a href="tel:0431 931 311"><i class="bi bi-telephone"></i> 0431 931 311 </a>
+                <a href="mailto:hello@silamfinance.com.au"><i class="bi bi-envelope"></i>info@silamfinance.com.au</a>
+                <div class="footer-address"><i class="bi bi-geo-alt"></i><span>54 Sun Road Leppington, NSW 2179,<br>Australia</span></div>
+                <a href="appointment.html" class="footer-cta">Book an Appointment <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-areas"><h4>Areas we serve</h4><p>Sydney • Parramatta • Blacktown • Castle Hill • Kellyville • Penrith • Campbelltown • Liverpool • Greater Sydney • Australia-wide</p></div>
+
+        <div class="footer-disclaimer">
+            <h4>Important information</h4>
+            <p>Information provided on this website is general in nature and does not take into account your personal objectives, financial situation or needs. Lending criteria, rates, fees, charges and conditions apply and may change. All applications are subject to lender assessment and approval.</p>
+            <p>Before making a decision, consider whether the information is appropriate for your circumstances and seek independent professional, financial or legal advice where appropriate.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> SILAM Finance. All rights reserved.</p>
+            <div><a href="#">Privacy Policy</a><a href="#">Credit Guide</a><a href="#">Complaints</a><a href="#">Terms &amp; Conditions</a></div>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
